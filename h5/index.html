@@ -17,57 +17,60 @@
       <h1 class="mt-5">Form Fields</h1>
       <form>
         <!-- Applicant Name  -->
-        <div class="mb-3">
-          <label for="name" class="form-label"
-            >Applicant Name (required)</label
-          >
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">Applicant Name (required)</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
             id="name"
-            aria-describedby="emailHelp"
+            placeholder="Steve Li"
           />
         </div>
-        <!-- Marital Status -->
+        <!-- Marital Status  -->
+        <!-- Types of marital status from ircc -->
         <div class="mb-3">
-          <label for="maritalStatus" class="form-label"
-            >Marital Status</label
-          >
-          <input
-            type="password"
-            class="form-control"
+          <label for="maritalStatus" class="form-label">Marital Status</label>
+          <select
             id="maritalStatus"
-          />
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option selected value="Single">Single</option>
+            <option value="CommonLaw">Common Law</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Separated">Separated</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Unstated">Unstated</option>
+            <option value="NaturalProgression">Natural progression</option>
+          </select>
         </div>
+
         <!-- Canadian Address -->
         <div class="mb-3">
           <label for="canadianAddress" class="form-label"
-            >Marital Status</label
+            >Canadian Address</label
           >
           <input
             type="password"
             class="form-control"
             id="canadianAddress"
+            placeholder="2024 Canada Way, Vancouver"
           />
         </div>
         <!-- Date of Birth -->
         <div class="mb-3">
-          <label for="dateOfBirth" class="form-label"
-            >Date of Birth
-          </label>
-          <input
-            type="password"
-            class="form-control"
-            id="dateOfBirth"
-          />
+          <label for="dateOfBirth" class="form-label">Date of Birth </label>
+          <input type="date" class="form-control" id="dateOfBirth" />
         </div>
         <!-- Email -->
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input
-            type="password"
+            type="email"
             class="form-control"
             id="email"
+            placeholder="xxxx@outlook.com"
           />
         </div>
         <!-- Canadian Phone Number -->
@@ -76,12 +79,14 @@
             >Canadian Phone Number
           </label>
           <input
-            type="password"
+            type="text"
             class="form-control"
             id="canadianPhoneNumber"
+            placeholder="604xxxxxx"
           />
         </div>
         <!-- "I identify as indigenous" (checkbox) -->
+        <!-- TODO If this field is checked, display an additional field “Nationality”-->
         <div class="form-check">
           <input
             class="form-check-input"
@@ -94,8 +99,14 @@
           </label>
         </div>
         <!-- submit button  -->
-        <button type="submit" class="btn btn-primary mt-5">Submit</button>
+        <div class="d-grid gap-2 mt-5">
+          <button class="btn btn-primary" type="button">Submit</button>
+        </div>
       </form>
     </div>
+    <!-- TODO -->
+    <!-- Display at the bottom of the form page a JSON object representing the state of the
+form inputs. -->
+    <div></div>
   </body>
 </html>
