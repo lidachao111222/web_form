@@ -69,13 +69,16 @@
           <!-- city -->
           <div class="form-floating mb-3">
             <input
-              type="text"
               class="form-control"
+              list="cityListOptions"
               id="city"
-              placeholder="name@example.com"
+              placeholder="city"
             />
+            <datalist id="cityListOptions">
+            </datalist>
             <label for="floatingInput">City</label>
           </div>
+
           <!-- provinces  -->
           <div class="form-floating mb-3">
             <select

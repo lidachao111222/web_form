@@ -10,6 +10,9 @@ let maritalStatus = document.querySelector("#maritalStatus");
 // canadian Address
 let canadianAddress = document.querySelector("#canadianAddress");
 
+// city
+let city = document.querySelector("#city");
+
 // date of birth
 let dateOfBirth = document.querySelector("#dateOfBirth");
 
@@ -22,6 +25,30 @@ let phoneNumber = document.querySelector("#canadianPhoneNumber");
 // get button element
 let submitButton = document.querySelector("#subButton");
 
+// get citylist element
+let cityListOptions = document.querySelector("#cityListOptions");
+
+// request city list from json file
+const getCityList = async () => {
+  try {
+    const response = await fetch("../canadian_cities.json");
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const cityList = await response.json();
+    // create element and append to the list element
+    cityList.forEach((city) => {
+      const cityOption = document.createElement("option");
+      cityOption.textContent = city;
+      cityOption.value = city;
+      cityListOptions.appendChild(cityOption);
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
 const validateDateOfBirth = () => {
   // birth input event
   dateOfBirth.addEventListener("blur", function () {
@@ -33,7 +60,7 @@ const validateDateOfBirth = () => {
     currentDate.setHours(0, 0, 0, 0);
     // compare
     if (currentDate.valueOf() < selectedDate.valueOf()) {
-      alert("please select a correct date");
+      alert("Date cannot be later than today.");
       this.value = "";
     }
   });
@@ -80,17 +107,14 @@ const handleSubmit = () => {
     // console.log(canadianAddress.value);
     // console.log(dateOfBirth.value);
     // console.log(emailAddress.value);
-    // console.log(phoneNumber.value);
+    // console.log(city.value);
   });
 };
 
 function main() {
-  console.log(cityList);
-
+  getCityList();
   validateDateOfBirth();
-
   validateEmail();
-
   handleSubmit();
 }
 
