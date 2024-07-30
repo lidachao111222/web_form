@@ -11,6 +11,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -18,7 +19,9 @@
       <form>
         <!-- Applicant Name  -->
         <div class="mb-3 mt-3">
-          <label for="name" class="form-label">Applicant Name (required)</label>
+          <label for="name" class="form-label"
+            ><h3>Applicant Name (required):</h3></label
+          >
           <input
             type="text"
             class="form-control"
@@ -29,13 +32,18 @@
         <!-- Marital Status  -->
         <!-- Types of marital status from ircc -->
         <div class="mb-3">
-          <label for="maritalStatus" class="form-label">Marital Status</label>
+          <label for="maritalStatus" class="form-label"
+            ><h3>Marital Status:</h3></label
+          >
           <select
             id="maritalStatus"
             class="form-select"
             aria-label="Default select example"
           >
-            <option selected value="Single">Single</option>
+            <option value="" disabled selected>
+              Please select your status
+            </option>
+            <option value="Single">Single</option>
             <option value="CommonLaw">Common Law</option>
             <option value="Married">Married</option>
             <option value="Divorced">Divorced</option>
@@ -43,20 +51,72 @@
             <option value="Widowed">Widowed</option>
             <option value="Unstated">Unstated</option>
             <option value="NaturalProgression">Natural progression</option>
+            <option value="">-</option>
           </select>
         </div>
 
         <!-- Canadian Address -->
         <div class="mb-3">
           <label for="canadianAddress" class="form-label"
-            >Canadian Address</label
+            >Canadian Address:</label
           >
           <input
-            type="password"
-            class="form-control"
+            type="text"
+            class="form-control mb-3"
             id="canadianAddress"
-            placeholder="2024 Canada Way, Vancouver"
+            placeholder="2024 Canada Way"
           />
+          <!-- city -->
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">City</label>
+          </div>
+          <!-- provinces  -->
+          <div class="form-floating mb-3">
+            <select
+              class="form-select"
+              id="city"
+              aria-label="Floating label select example"
+            >
+              <option disabled selected value="">
+                select province from the menu
+              </option>
+              <option value="Ontario">Ontario</option>
+              <option value="Quebec">Quebec</option>
+              <option value="British Columbia">British Columbia</option>
+              <option value="Alberta">Alberta</option>
+              <option value="Manitoba">Manitoba</option>
+              <option value="Saskatchewan">Saskatchewan</option>
+              <option value="New Brunswick">New Brunswick</option>
+              <option value="Nova Scotia">Nova Scotia</option>
+              <option value="Prince Edward Island">Prince Edward Island</option>
+              <option value="Newfoundland and Labrador">
+                Newfoundland and Labrador
+              </option>
+              <option value="Northwest Territories">
+                Northwest Territories
+              </option>
+              <option value="Yukon">Yukon</option>
+              <option value="Nunavut">Nunavut</option>
+              <option value="">-</option>
+            </select>
+            <label for="city">provinces</label>
+          </div>
+          <!-- post code -->
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="postcode"
+              placeholder="Post Code"
+            />
+            <label for="postcode">Post Code</label>
+          </div>
         </div>
         <!-- Date of Birth -->
         <div class="mb-3">
@@ -100,7 +160,9 @@
         </div>
         <!-- submit button  -->
         <div class="d-grid gap-2 mt-5">
-          <button class="btn btn-primary" type="button">Submit</button>
+          <button class="btn btn-primary" type="button" id="subButton">
+            Submit
+          </button>
         </div>
       </form>
     </div>
