@@ -137,7 +137,7 @@ const validateEmail = () => {
   const emailReg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
   // email input event
   emailAddressElement.addEventListener("blur", function () {
-    //  check if is a email email address.
+    //  check if is a email address.
     const emailValue = emailAddressElement.value.trim();
     // First check if the email value is empty
     if (emailValue.length === 0) {
@@ -158,7 +158,30 @@ const validateEmail = () => {
   });
 };
 
-const validatePhoneNumber = () => {};
+const validatePhoneNumber = () => {
+  const canadianPhoneRegex = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+  // phone number input event
+  phoneNumberElement.addEventListener("blur", function () {
+    //  check if is a phone number address.
+    const phoneNumberValue = phoneNumberElement.value.trim();
+    // First check if the phone number value is empty
+    if (phoneNumberValue.length === 0) {
+      return;
+    }
+    // Then check if it matches the phone number pattern
+    if (!canadianPhoneRegex.test(phoneNumberValue)) {
+      phoneNumberElement.classList.add("is-invalid");
+    }
+  });
+
+  // remove the warning if the length is zero
+  phoneNumberElement.addEventListener("keyup", function () {
+    const phoneNumberValue = phoneNumberElement.value.trim();
+    if (phoneNumberValue.length === 0) {
+      phoneNumberElement.classList.remove("is-invalid");
+    }
+  });
+};
 
 const handleIndigenousCheckBox = () => {
   indigenousCheckBoxElement.addEventListener("change", function () {
@@ -216,6 +239,7 @@ function main() {
   validateDateOfBirth();
   validatePostCode();
   validateEmail();
+  validatePhoneNumber();
   handleIndigenousCheckBox();
   handleSubmit();
 }
