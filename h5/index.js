@@ -1,3 +1,5 @@
+//TODO should be element
+
 // Applicant Name
 let applicantName = document.querySelector("#name");
 
@@ -13,6 +15,8 @@ let canadianAddress = document.querySelector("#canadianAddress");
 // city
 let city = document.querySelector("#city");
 
+// TODO province
+
 // postcode
 let postcode = document.querySelector("#postcode");
 
@@ -24,6 +28,14 @@ let emailAddress = document.querySelector("#email");
 
 // phone number
 let phoneNumber = document.querySelector("#canadianPhoneNumber");
+
+// indigenous checkbox
+let indigenousCheckBox = document.querySelector("#indigenousCheckBox");
+
+// nationality input element
+let nationalityInputELement = document.querySelector(
+  "#nationalityInputELement"
+);
 
 // get button element
 let submitButton = document.querySelector("#subButton");
@@ -121,6 +133,16 @@ const validateEmail = () => {
   });
 };
 
+const handleIndigenousCheckBox = () => {
+  indigenousCheckBox.addEventListener("change", function () {
+    if (this.checked) {
+      nationalityInputELement.classList.remove("d-none");
+    } else {
+      nationalityInputELement.classList.add("d-none");
+    }
+  });
+};
+
 const handleSubmit = () => {
   // submit button event
   submitButton.addEventListener("click", function () {
@@ -144,6 +166,7 @@ function main() {
   validateDateOfBirth();
   validatePostCode();
   validateEmail();
+  handleIndigenousCheckBox();
   handleSubmit();
 
   //TODO the postcpde's letter need to be cap
