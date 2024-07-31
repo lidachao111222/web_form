@@ -107,12 +107,12 @@ const validateDateOfBirth = () => {
 };
 
 const validatePostCode = () => {
+  const postCodeReg =
+    /^[abceghj-nprstvxy]\d[abceghj-nprstv-z] \d[abceghj-nprstv-z]\d$/i;
+
   // postcode input event
   postcodeElement.addEventListener("blur", function () {
     // check if is a email email address.
-    const postCodeReg =
-      /^[abceghj-nprstvxy]\d[abceghj-nprstv-z] \d[abceghj-nprstv-z]\d$/i;
-
     const postcodeValue = postcodeElement.value.trim();
     // First check if the postcode value is empty
     if (postcodeValue.length === 0) {
@@ -127,17 +127,17 @@ const validatePostCode = () => {
   // remove the warning if the length is zero
   postcodeElement.addEventListener("keyup", function () {
     const postcodeValue = postcode.value.trim();
-    if (postcodeValue.length === 0) {
+    if (postcodeValue.length === 0 || postCodeReg.test(postcodeValue)) {
       postcodeElement.classList.remove("is-invalid");
     }
   });
 };
 
 const validateEmail = () => {
+  const emailReg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
   // email input event
   emailAddressElement.addEventListener("blur", function () {
-    // check if is a email email address.
-    const emailReg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
+    //  check if is a email email address.
     const emailValue = emailAddressElement.value.trim();
     // First check if the email value is empty
     if (emailValue.length === 0) {
@@ -182,7 +182,9 @@ const handleSubmit = () => {
     let collectInfo = {
       applicantName: applicantNameElement.value.trim(),
       maritalStatus: maritalStatusElement.value,
-      canadianAddress: `${canadianAddressElement.value.trim()}, ${cityElement.value}, ${provinceElement.value}, ${postcodeElement.value}`,
+      canadianAddress: `${canadianAddressElement.value.trim()}, ${
+        cityElement.value
+      }, ${provinceElement.value}, ${postcodeElement.value}`,
       dateOfBirth: dateOfBirthElement.value,
       emailAddress: emailAddressElement.value.trim(),
       canadianPhoneNumber: `${phoneNumberElement.value.trim()}`,
@@ -216,8 +218,6 @@ function main() {
   validateEmail();
   handleIndigenousCheckBox();
   handleSubmit();
-
-  //TODO the postcpde's letter need to be cap
 }
 
 main();

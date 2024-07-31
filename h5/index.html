@@ -108,11 +108,13 @@
           </div>
           <!-- post code -->
           <div class="form-floating mb-3">
+            <!-- //the iunput word will be upper case  -->
             <input
               type="text"
               class="form-control"
               id="postcode"
               placeholder="Post Code"
+              oninput="this.value = this.value.toUpperCase();"
             />
             <label for="postcode">Post Code (eg: "V3N 2N8" ) :</label>
           </div>
