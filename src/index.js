@@ -3,6 +3,8 @@ import {
   validateDateOfBirth,
 } from "../utils/validation.js";
 
+import updateDropdown from "../utils/updateDropdown.js";
+
 // Applicant Name
 let applicantNameElement = document.querySelector("#name");
 
@@ -54,44 +56,13 @@ let cityListOptionsElement = document.querySelector("#cityListOptions");
 let countryCodeElement = document.querySelector("#phoneCodeListOptions");
 
 // request city list from json file
-const getCityList = async () => {
-  try {
-    const response = await fetch("../json/canadian_cities.json");
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const cityList = await response.json();
-    // create element and append to the list element
-    cityList.forEach((city) => {
-      const cityOption = document.createElement("option");
-      cityOption.textContent = city;
-      cityOption.value = city;
-      cityListOptionsElement.appendChild(cityOption);
-    });
-  } catch (error) {
-    console.error(error.message);
-  }
+const getCityList = () => {
+  updateDropdown("canadian_cities.json", cityListOptionsElement);
 };
 
 // request country code list from json file
-const getCountryCodeList = async () => {
-  try {
-    const response = await fetch("../json/country_code.json");
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-    const countryCodeList = await response.json();
-    // create element and append to the list element
-    countryCodeList.forEach((countryCode) => {
-      const countryCodeOption = document.createElement("option");
-      countryCodeOption.textContent = countryCode;
-      countryCodeOption.value = countryCode;
-      countryCodeElement.appendChild(countryCodeOption);
-    });
-  } catch (error) {
-    console.error(error.message);
-  }
+const getCountryCodeList = () => {
+  updateDropdown("country_code.json", countryCodeElement);
 };
 
 const initValidators = () => {
