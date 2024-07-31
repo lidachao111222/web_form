@@ -1,0 +1,21 @@
+:root {
+  --border-color: #ced4da;
+}
+
+.phoneNumberContainer{
+    border: 1px solid var(--border-color);
+}
+
+#canadianPhoneNumber,
+#phoneCode {
+  border: none;
+}
+
+#phoneCode {
+  border-right: 1px solid var(--border-color);
+}
+
+#canadianPhoneNumber,
+#phoneCode:focus {
+  box-shadow: none;
+}

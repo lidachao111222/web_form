@@ -11,6 +11,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./index.css" />
     <script src="./index.js" defer></script>
   </head>
   <body>
@@ -24,7 +25,7 @@
           >
           <input
             type="text"
-            class="form-control"
+            class="form-control form-select-lg"
             id="name"
             placeholder="Steve Li"
           />
@@ -37,7 +38,7 @@
           >
           <select
             id="maritalStatus"
-            class="form-select"
+            class="form-select form-select-lg"
             aria-label="Default select example"
           >
             <option value="" disabled selected>
@@ -58,11 +59,11 @@
         <!-- Canadian Address -->
         <div class="mb-3">
           <label for="canadianAddress" class="form-label"
-            >Canadian Address:</label
+            ><h3>Canadian Address:</h3></label
           >
           <input
             type="text"
-            class="form-control mb-3"
+            class="form-control mb-3 form-select-lg"
             id="canadianAddress"
             placeholder="2024 Canada Way"
           />
@@ -117,38 +118,61 @@
               id="postcode"
               placeholder="Post Code"
             />
-            <label for="postcode">Post Code (eg: "V3N 2N8" ) </label>
+            <label for="postcode">Post Code (eg: "V3N 2N8" ) :</label>
           </div>
         </div>
         <!-- Date of Birth -->
         <div class="mb-3">
-          <label for="dateOfBirth" class="form-label">Date of Birth </label>
-          <input type="date" class="form-control" id="dateOfBirth" />
+          <label for="dateOfBirth" class="form-label"
+            ><h3>Date of Birth</h3>
+          </label>
+          <input
+            type="date"
+            class="form-control form-select-lg"
+            id="dateOfBirth"
+          />
         </div>
         <!-- Email -->
         <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
+          <label for="email" class="form-label"><h3>Email:</h3></label>
           <input
             type="email"
-            class="form-control"
+            class="form-control form-select-lg"
             id="email"
             placeholder="xxxx@outlook.com"
           />
         </div>
         <!-- Canadian Phone Number -->
-        <div class="mb-3">
-          <label for="canadianPhoneNumber" class="form-label"
-            >Canadian Phone Number
+        <div>
+          <label for="canadianPhoneNumber" class="form-label">
+            <h3>Canadian Phone Number:</h3>
           </label>
-          <input
-            type="text"
-            class="form-control"
-            id="canadianPhoneNumber"
-            placeholder="604xxxxxx"
-          />
         </div>
+        <div
+          class="d-flex phoneNumberContainer justify-content-center align-items-center"
+        >
+          <div class="form-floating">
+            <input
+              class="form-control"
+              list="phoneCodeListOptions"
+              id="phoneCode"
+              placeholder="phoneCode"
+            />
+            <datalist id="phoneCodeListOptions"> </datalist>
+            <label for="floatingInput">Country Code</label>
+          </div>
+          <div class="flex-fill">
+            <input
+              type="tel"
+              class="form-control form-control-lg"
+              id="canadianPhoneNumber"
+              placeholder="604xxxxxx"
+            />
+          </div>
+        </div>
+
         <!-- "I identify as indigenous" (checkbox) -->
-        <div class="form-check">
+        <div class="form-check mt-5">
           <input
             class="form-check-input"
             type="checkbox"
@@ -162,14 +186,14 @@
         <div>
           <input
             type="text"
-            class="form-control mt-2 d-none"
+            class="form-control mt-2 d-none form-control-lg"
             id="nationalityInputELement"
             placeholder="Nationality"
           />
         </div>
 
         <!-- submit button  -->
-        <div class="d-grid gap-2 mt-5">
+        <div class="d-grid gap-2 mt-5 mb-5">
           <button class="btn btn-primary" type="button" id="subButton">
             Submit
           </button>

@@ -1,5 +1,3 @@
-//TODO should be element
-
 // Applicant Name
 let applicantNameElement = document.querySelector("#name");
 
@@ -24,6 +22,9 @@ let dateOfBirthElement = document.querySelector("#dateOfBirth");
 // email
 let emailAddressElement = document.querySelector("#email");
 
+// phone country code
+let phoneCodeElement = document.querySelector("#phoneCode");
+
 // phone number
 let phoneNumberElement = document.querySelector("#canadianPhoneNumber");
 
@@ -41,6 +42,9 @@ let submitButtonElement = document.querySelector("#subButton");
 // get citylist element
 let cityListOptionsElement = document.querySelector("#cityListOptions");
 
+// get phoneCodeList element
+let countryCodeElement = document.querySelector("#phoneCodeListOptions");
+
 // request city list from json file
 const getCityList = async () => {
   try {
@@ -56,6 +60,26 @@ const getCityList = async () => {
       cityOption.textContent = city;
       cityOption.value = city;
       cityListOptionsElement.appendChild(cityOption);
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+// request country code list from json file
+const getCountryCodeList = async () => {
+  try {
+    const response = await fetch("../country_code.json");
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    const countryCodeList = await response.json();
+    // create element and append to the list element
+    countryCodeList.forEach((countryCode) => {
+      const countryCodeOption = document.createElement("option");
+      countryCodeOption.textContent = countryCode;
+      countryCodeOption.value = countryCode;
+      countryCodeElement.appendChild(countryCodeOption);
     });
   } catch (error) {
     console.error(error.message);
@@ -131,6 +155,8 @@ const validateEmail = () => {
   });
 };
 
+const validatePhoneNumber = () => {};
+
 const handleIndigenousCheckBox = () => {
   indigenousCheckBoxElement.addEventListener("change", function () {
     if (this.checked) {
@@ -158,6 +184,7 @@ const handleSubmit = () => {
     // console.log(postcodeElement.value);
     // console.log(dateOfBirthElement.value);
     // console.log(emailAddressElement.value);
+    // console.log(phoneCodeElement.value);
     // console.log(phoneNumberElement.value);
     // console.log(indigenousCheckBoxElement.checked);
     // console.log(nationalityInputELement.value);
@@ -166,6 +193,7 @@ const handleSubmit = () => {
 
 function main() {
   getCityList();
+  getCountryCodeList();
   validateDateOfBirth();
   validatePostCode();
   validateEmail();
