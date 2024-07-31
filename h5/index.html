@@ -89,23 +89,19 @@
               <option disabled selected value="">
                 select province from the menu
               </option>
-              <option value="Ontario">Ontario</option>
-              <option value="Quebec">Quebec</option>
-              <option value="British Columbia">British Columbia</option>
-              <option value="Alberta">Alberta</option>
-              <option value="Manitoba">Manitoba</option>
-              <option value="Saskatchewan">Saskatchewan</option>
-              <option value="New Brunswick">New Brunswick</option>
-              <option value="Nova Scotia">Nova Scotia</option>
-              <option value="Prince Edward Island">Prince Edward Island</option>
-              <option value="Newfoundland and Labrador">
-                Newfoundland and Labrador
-              </option>
-              <option value="Northwest Territories">
-                Northwest Territories
-              </option>
-              <option value="Yukon">Yukon</option>
-              <option value="Nunavut">Nunavut</option>
+              <option value="ON">Ontario</option>
+              <option value="QC">Quebec</option>
+              <option value="BC">British Columbia</option>
+              <option value="AB">Alberta</option>
+              <option value="MB">Manitoba</option>
+              <option value="SK">Saskatchewan</option>
+              <option value="NB">New Brunswick</option>
+              <option value="NS">Nova Scotia</option>
+              <option value="PE">Prince Edward Island</option>
+              <option value="NL">Newfoundland and Labrador</option>
+              <option value="NT">Northwest Territories</option>
+              <option value="YT">Yukon</option>
+              <option value="NU">Nunavut</option>
               <option value="">-</option>
             </select>
             <label for="province">provinces</label>
@@ -151,16 +147,20 @@
         <div
           class="d-flex phoneNumberContainer justify-content-center align-items-center"
         >
-          <div class="form-floating">
-            <input
-              class="form-control"
-              list="phoneCodeListOptions"
-              id="phoneCode"
-              placeholder="phoneCode"
-            />
-            <datalist id="phoneCodeListOptions"> </datalist>
-            <label for="floatingInput">Country Code</label>
-          </div>
+          <!-- // remove disabled then the code can be edited -->
+          <fieldset disabled>
+            <div class="form-floating">
+              <input
+                class="form-control"
+                list="phoneCodeListOptions"
+                id="phoneCode"
+                placeholder="phoneCode"
+                value="🇨🇦 +1"
+              />
+              <datalist id="phoneCodeListOptions"> </datalist>
+              <label for="floatingInput">Country Code</label>
+            </div>
+          </fieldset>
           <div class="flex-fill">
             <input
               type="tel"
@@ -200,9 +200,10 @@
         </div>
       </form>
     </div>
-    <!-- TODO -->
     <!-- Display at the bottom of the form page a JSON object representing the state of the
 form inputs. -->
-    <div></div>
+    <div class="container mb-5">
+      <div><text id="formState"></text></div>
+    </div>
   </body>
 </html>

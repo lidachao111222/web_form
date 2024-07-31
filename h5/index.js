@@ -39,6 +39,9 @@ let nationalityInputELement = document.querySelector(
 // get button element
 let submitButtonElement = document.querySelector("#subButton");
 
+// from state element
+let formStateElement = document.querySelector("#formState");
+
 // get citylist element
 let cityListOptionsElement = document.querySelector("#cityListOptions");
 
@@ -175,6 +178,20 @@ const handleSubmit = () => {
       alert("the Applicant Name is required, please enter your name");
       return;
     }
+
+    let collectInfo = {
+      applicantName: applicantNameElement.value.trim(),
+      maritalStatus: maritalStatusElement.value,
+      canadianAddress: `${canadianAddressElement.value.trim()}, ${cityElement.value}, ${provinceElement.value}, ${postcodeElement.value}`,
+      dateOfBirth: dateOfBirthElement.value,
+      emailAddress: emailAddressElement.value.trim(),
+      canadianPhoneNumber: `${phoneNumberElement.value.trim()}`,
+      isIndigenous: indigenousCheckBoxElement.checked,
+      applicantNationality: nationalityInputELement.value.trim(),
+    };
+
+    let jsonString = JSON.stringify(collectInfo);
+    formStateElement.textContent = jsonString;
 
     // console.log(applicantNameElement.value);
     // console.log(maritalStatusElement.value);
