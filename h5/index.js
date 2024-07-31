@@ -13,6 +13,9 @@ let canadianAddress = document.querySelector("#canadianAddress");
 // city
 let city = document.querySelector("#city");
 
+// postcode
+let postcode = document.querySelector("#postcode");
+
 // date of birth
 let dateOfBirth = document.querySelector("#dateOfBirth");
 
@@ -66,6 +69,33 @@ const validateDateOfBirth = () => {
   });
 };
 
+const validatePostCode = () => {
+  // postcode input event
+  postcode.addEventListener("blur", function () {
+    // check if is a email email address.
+    const postCodeReg =
+      /^[abceghj-nprstvxy]\d[abceghj-nprstv-z] \d[abceghj-nprstv-z]\d$/i;
+
+    const postcodeValue = postcode.value.trim();
+    // First check if the postcode value is empty
+    if (postcodeValue.length === 0) {
+      return;
+    }
+    // Then check if it matches the postcode pattern
+    if (!postCodeReg.test(postcodeValue)) {
+      postcode.classList.add("is-invalid");
+    }
+  });
+
+  // remove the warning if the length is zero
+  postcode.addEventListener("keyup", function () {
+    const postcodeValue = postcode.value.trim();
+    if (postcodeValue.length === 0) {
+      postcode.classList.remove("is-invalid");
+    }
+  });
+};
+
 const validateEmail = () => {
   // email input event
   emailAddress.addEventListener("blur", function () {
@@ -78,9 +108,7 @@ const validateEmail = () => {
     }
     // Then check if it matches the email pattern
     if (!emailReg.test(emailValue)) {
-      // alert("This is not a correct email address, please type again.");
       emailAddress.classList.add("is-invalid");
-      // this.value = "";
     }
   });
 
@@ -114,8 +142,11 @@ const handleSubmit = () => {
 function main() {
   getCityList();
   validateDateOfBirth();
+  validatePostCode();
   validateEmail();
   handleSubmit();
+
+  //TODO the postcpde's letter need to be cap
 }
 
 main();
