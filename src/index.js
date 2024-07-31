@@ -1,3 +1,8 @@
+import {
+  addValidationListeners,
+  validateDateOfBirth,
+} from "../utils/validation.js";
+
 // Applicant Name
 let applicantNameElement = document.querySelector("#name");
 
@@ -23,7 +28,7 @@ let dateOfBirthElement = document.querySelector("#dateOfBirth");
 let emailAddressElement = document.querySelector("#email");
 
 // phone country code
-let phoneCodeElement = document.querySelector("#phoneCode");
+// let phoneCodeElement = document.querySelector("#phoneCode");
 
 // phone number
 let phoneNumberElement = document.querySelector("#canadianPhoneNumber");
@@ -51,7 +56,7 @@ let countryCodeElement = document.querySelector("#phoneCodeListOptions");
 // request city list from json file
 const getCityList = async () => {
   try {
-    const response = await fetch("../canadian_cities.json");
+    const response = await fetch("../json/canadian_cities.json");
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -72,7 +77,7 @@ const getCityList = async () => {
 // request country code list from json file
 const getCountryCodeList = async () => {
   try {
-    const response = await fetch("../country_code.json");
+    const response = await fetch("../json/country_code.json");
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -89,98 +94,16 @@ const getCountryCodeList = async () => {
   }
 };
 
-const validateDateOfBirth = () => {
-  // birth input event
-  dateOfBirthElement.addEventListener("blur", function () {
-    // get selected date
-    const selectedDate = new Date(this.value);
-    selectedDate.setHours(0, 0, 0, 0);
-    // get current date
-    const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
-    // compare
-    if (currentDate.valueOf() < selectedDate.valueOf()) {
-      alert("Date cannot be later than today.");
-      this.value = "";
-    }
-  });
-};
-
-const validatePostCode = () => {
+const initValidators = () => {
   const postCodeReg =
     /^[abceghj-nprstvxy]\d[abceghj-nprstv-z] \d[abceghj-nprstv-z]\d$/i;
-
-  // postcode input event
-  postcodeElement.addEventListener("blur", function () {
-    // check if is a email email address.
-    const postcodeValue = postcodeElement.value.trim();
-    // First check if the postcode value is empty
-    if (postcodeValue.length === 0) {
-      return;
-    }
-    // Then check if it matches the postcode pattern
-    if (!postCodeReg.test(postcodeValue)) {
-      postcodeElement.classList.add("is-invalid");
-    }
-  });
-
-  // remove the warning if the length is zero
-  postcodeElement.addEventListener("keyup", function () {
-    const postcodeValue = postcode.value.trim();
-    if (postcodeValue.length === 0 || postCodeReg.test(postcodeValue)) {
-      postcodeElement.classList.remove("is-invalid");
-    }
-  });
-};
-
-const validateEmail = () => {
   const emailReg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
-  // email input event
-  emailAddressElement.addEventListener("blur", function () {
-    //  check if is a email address.
-    const emailValue = emailAddressElement.value.trim();
-    // First check if the email value is empty
-    if (emailValue.length === 0) {
-      return;
-    }
-    // Then check if it matches the email pattern
-    if (!emailReg.test(emailValue)) {
-      emailAddressElement.classList.add("is-invalid");
-    }
-  });
-
-  // remove the warning if the length is zero
-  emailAddressElement.addEventListener("keyup", function () {
-    const emailValue = emailAddressElement.value.trim();
-    if (emailValue.length === 0) {
-      emailAddressElement.classList.remove("is-invalid");
-    }
-  });
-};
-
-const validatePhoneNumber = () => {
   const canadianPhoneRegex = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
-  // phone number input event
-  phoneNumberElement.addEventListener("blur", function () {
-    //  check if is a phone number address.
-    const phoneNumberValue = phoneNumberElement.value.trim();
-    // First check if the phone number value is empty
-    if (phoneNumberValue.length === 0) {
-      return;
-    }
-    // Then check if it matches the phone number pattern
-    if (!canadianPhoneRegex.test(phoneNumberValue)) {
-      phoneNumberElement.classList.add("is-invalid");
-    }
-  });
 
-  // remove the warning if the length is zero
-  phoneNumberElement.addEventListener("keyup", function () {
-    const phoneNumberValue = phoneNumberElement.value.trim();
-    if (phoneNumberValue.length === 0) {
-      phoneNumberElement.classList.remove("is-invalid");
-    }
-  });
+  addValidationListeners(postcodeElement, postCodeReg);
+  addValidationListeners(emailAddressElement, emailReg);
+  addValidationListeners(phoneNumberElement, canadianPhoneRegex);
+  validateDateOfBirth(dateOfBirthElement);
 };
 
 const handleIndigenousCheckBox = () => {
@@ -217,29 +140,13 @@ const handleSubmit = () => {
 
     let jsonString = JSON.stringify(collectInfo);
     formStateElement.textContent = jsonString;
-
-    // console.log(applicantNameElement.value);
-    // console.log(maritalStatusElement.value);
-    // console.log(canadianAddressElement.value);
-    // console.log(cityElement.value);
-    // console.log(provinceElement.value);
-    // console.log(postcodeElement.value);
-    // console.log(dateOfBirthElement.value);
-    // console.log(emailAddressElement.value);
-    // console.log(phoneCodeElement.value);
-    // console.log(phoneNumberElement.value);
-    // console.log(indigenousCheckBoxElement.checked);
-    // console.log(nationalityInputELement.value);
   });
 };
 
 function main() {
   getCityList();
   getCountryCodeList();
-  validateDateOfBirth();
-  validatePostCode();
-  validateEmail();
-  validatePhoneNumber();
+  initValidators();
   handleIndigenousCheckBox();
   handleSubmit();
 }
