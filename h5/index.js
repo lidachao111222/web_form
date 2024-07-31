@@ -1,36 +1,34 @@
 //TODO should be element
 
 // Applicant Name
-let applicantName = document.querySelector("#name");
-
-// Marital Status
-let status = document.querySelector("#maritalStatus");
+let applicantNameElement = document.querySelector("#name");
 
 // marital Status
-let maritalStatus = document.querySelector("#maritalStatus");
+let maritalStatusElement = document.querySelector("#maritalStatus");
 
 // canadian Address
-let canadianAddress = document.querySelector("#canadianAddress");
+let canadianAddressElement = document.querySelector("#canadianAddress");
 
 // city
-let city = document.querySelector("#city");
+let cityElement = document.querySelector("#city");
 
-// TODO province
+// province
+let provinceElement = document.querySelector("#province");
 
 // postcode
-let postcode = document.querySelector("#postcode");
+let postcodeElement = document.querySelector("#postcode");
 
 // date of birth
-let dateOfBirth = document.querySelector("#dateOfBirth");
+let dateOfBirthElement = document.querySelector("#dateOfBirth");
 
 // email
-let emailAddress = document.querySelector("#email");
+let emailAddressElement = document.querySelector("#email");
 
 // phone number
-let phoneNumber = document.querySelector("#canadianPhoneNumber");
+let phoneNumberElement = document.querySelector("#canadianPhoneNumber");
 
 // indigenous checkbox
-let indigenousCheckBox = document.querySelector("#indigenousCheckBox");
+let indigenousCheckBoxElement = document.querySelector("#indigenousCheckBox");
 
 // nationality input element
 let nationalityInputELement = document.querySelector(
@@ -38,10 +36,10 @@ let nationalityInputELement = document.querySelector(
 );
 
 // get button element
-let submitButton = document.querySelector("#subButton");
+let submitButtonElement = document.querySelector("#subButton");
 
 // get citylist element
-let cityListOptions = document.querySelector("#cityListOptions");
+let cityListOptionsElement = document.querySelector("#cityListOptions");
 
 // request city list from json file
 const getCityList = async () => {
@@ -57,7 +55,7 @@ const getCityList = async () => {
       const cityOption = document.createElement("option");
       cityOption.textContent = city;
       cityOption.value = city;
-      cityListOptions.appendChild(cityOption);
+      cityListOptionsElement.appendChild(cityOption);
     });
   } catch (error) {
     console.error(error.message);
@@ -66,7 +64,7 @@ const getCityList = async () => {
 
 const validateDateOfBirth = () => {
   // birth input event
-  dateOfBirth.addEventListener("blur", function () {
+  dateOfBirthElement.addEventListener("blur", function () {
     // get selected date
     const selectedDate = new Date(this.value);
     selectedDate.setHours(0, 0, 0, 0);
@@ -83,58 +81,58 @@ const validateDateOfBirth = () => {
 
 const validatePostCode = () => {
   // postcode input event
-  postcode.addEventListener("blur", function () {
+  postcodeElement.addEventListener("blur", function () {
     // check if is a email email address.
     const postCodeReg =
       /^[abceghj-nprstvxy]\d[abceghj-nprstv-z] \d[abceghj-nprstv-z]\d$/i;
 
-    const postcodeValue = postcode.value.trim();
+    const postcodeValue = postcodeElement.value.trim();
     // First check if the postcode value is empty
     if (postcodeValue.length === 0) {
       return;
     }
     // Then check if it matches the postcode pattern
     if (!postCodeReg.test(postcodeValue)) {
-      postcode.classList.add("is-invalid");
+      postcodeElement.classList.add("is-invalid");
     }
   });
 
   // remove the warning if the length is zero
-  postcode.addEventListener("keyup", function () {
+  postcodeElement.addEventListener("keyup", function () {
     const postcodeValue = postcode.value.trim();
     if (postcodeValue.length === 0) {
-      postcode.classList.remove("is-invalid");
+      postcodeElement.classList.remove("is-invalid");
     }
   });
 };
 
 const validateEmail = () => {
   // email input event
-  emailAddress.addEventListener("blur", function () {
+  emailAddressElement.addEventListener("blur", function () {
     // check if is a email email address.
     const emailReg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/;
-    const emailValue = emailAddress.value.trim();
+    const emailValue = emailAddressElement.value.trim();
     // First check if the email value is empty
     if (emailValue.length === 0) {
       return;
     }
     // Then check if it matches the email pattern
     if (!emailReg.test(emailValue)) {
-      emailAddress.classList.add("is-invalid");
+      emailAddressElement.classList.add("is-invalid");
     }
   });
 
   // remove the warning if the length is zero
-  emailAddress.addEventListener("keyup", function () {
-    const emailValue = emailAddress.value.trim();
+  emailAddressElement.addEventListener("keyup", function () {
+    const emailValue = emailAddressElement.value.trim();
     if (emailValue.length === 0) {
-      emailAddress.classList.remove("is-invalid");
+      emailAddressElement.classList.remove("is-invalid");
     }
   });
 };
 
 const handleIndigenousCheckBox = () => {
-  indigenousCheckBox.addEventListener("change", function () {
+  indigenousCheckBoxElement.addEventListener("change", function () {
     if (this.checked) {
       nationalityInputELement.classList.remove("d-none");
     } else {
@@ -145,19 +143,24 @@ const handleIndigenousCheckBox = () => {
 
 const handleSubmit = () => {
   // submit button event
-  submitButton.addEventListener("click", function () {
+  submitButtonElement.addEventListener("click", function () {
     // if name is empty ask for input
-    if (applicantName.value.length === 0) {
+    if (applicantNameElement.value.length === 0) {
       alert("the Applicant Name is required, please enter your name");
       return;
     }
 
-    // console.log(applicantName.value);
-    // console.log(maritalStatus.value);
-    // console.log(canadianAddress.value);
-    // console.log(dateOfBirth.value);
-    // console.log(emailAddress.value);
-    // console.log(city.value);
+    // console.log(applicantNameElement.value);
+    // console.log(maritalStatusElement.value);
+    // console.log(canadianAddressElement.value);
+    // console.log(cityElement.value);
+    // console.log(provinceElement.value);
+    // console.log(postcodeElement.value);
+    // console.log(dateOfBirthElement.value);
+    // console.log(emailAddressElement.value);
+    // console.log(phoneNumberElement.value);
+    // console.log(indigenousCheckBoxElement.checked);
+    // console.log(nationalityInputELement.value);
   });
 };
 
