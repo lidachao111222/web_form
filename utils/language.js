@@ -21,18 +21,25 @@ async function loadLanguage(lang) {
     document.querySelector("#nationalityInputELement").setAttribute("placeholder", texts?.nationality);
     document.querySelector("#subButton").textContent = texts?.submit;
 
-  //marital status selecter
+    // remove value first before render
+    const itemsToRemove = document.querySelectorAll('.editOption');
+    itemsToRemove.forEach(element => {
+        element.remove();
+    });
+
     renderMaritalSelecter(texts);
     renderProvinceSelecter(texts)
 }
 
 const renderMaritalSelecter = ({status}) => {
     const selectParent = document.querySelector("#maritalStatus");
-    const lastOption = document.querySelector("#lastOptionOfMarital");
+    const lastOption = document.querySelector("#lastOptionOfMarital"); 
+  
     status.forEach((statu) => {
         const newOption = document.createElement("option");
         newOption.textContent = statu;
         newOption.value = statu;
+        newOption.classList.add("editOption");
         selectParent.insertBefore(newOption, lastOption);
     });
 }
@@ -44,6 +51,7 @@ const renderProvinceSelecter = ({provinceList}) => {
         const newOption = document.createElement("option");
         newOption.textContent = provinceList[i]?.name;
         newOption.value = provinceList[i]?.value;
+        newOption.classList.add("editOption");
         selectParent.insertBefore(newOption, lastOption);
     }
 }
