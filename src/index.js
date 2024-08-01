@@ -1,64 +1,46 @@
 import { loadLanguage, submitAlertCheck } from "../utils/language.js";
-
 import {
   addValidationListeners,
   validateDateOfBirth,
 } from "../utils/validation.js";
-
 import updateDropdown from "../utils/updateDropdown.js";
 
 // select element of changing language
-let changeLanguageElement = document.querySelector("#changeLanguage");
-
+const changeLanguageElement = document.querySelector("#changeLanguage");
 // Applicant Name
-let applicantNameElement = document.querySelector("#name");
-
+const applicantNameElement = document.querySelector("#name");
 // marital Status
-let maritalStatusElement = document.querySelector("#maritalStatus");
-
+const maritalStatusElement = document.querySelector("#maritalStatus");
 // canadian Address
-let canadianAddressElement = document.querySelector("#canadianAddress");
-
+const canadianAddressElement = document.querySelector("#canadianAddress");
 // city
-let cityElement = document.querySelector("#city");
-
+const cityElement = document.querySelector("#city");
 // province
-let provinceElement = document.querySelector("#province");
-
+const provinceElement = document.querySelector("#province");
 // postcode
-let postcodeElement = document.querySelector("#postcode");
-
+const postcodeElement = document.querySelector("#postcode");
 // date of birth
-let dateOfBirthElement = document.querySelector("#dateOfBirth");
-
+const dateOfBirthElement = document.querySelector("#dateOfBirth");
 // email
-let emailAddressElement = document.querySelector("#email");
-
+const emailAddressElement = document.querySelector("#email");
 // phone country code
 // let phoneCodeElement = document.querySelector("#phoneCode");
-
 // phone number
-let phoneNumberElement = document.querySelector("#canadianPhoneNumber");
-
+const phoneNumberElement = document.querySelector("#canadianPhoneNumber");
 // indigenous checkbox
-let indigenousCheckBoxElement = document.querySelector("#indigenousCheckBox");
-
+const indigenousCheckBoxElement = document.querySelector("#indigenousCheckBox");
 // nationality input element
-let nationalityInputELement = document.querySelector(
+const nationalityInputELement = document.querySelector(
   "#nationalityInputELement"
 );
-
 // get button element
-let submitButtonElement = document.querySelector("#subButton");
-
+const submitButtonElement = document.querySelector("#subButton");
 // from state element
-let formStateElement = document.querySelector("#formState");
-
+const formStateElement = document.querySelector("#formState");
 // get citylist element
-let cityListOptionsElement = document.querySelector("#cityListOptions");
-
+const cityListOptionsElement = document.querySelector("#cityListOptions");
 // get phoneCodeList element
-let countryCodeElement = document.querySelector("#phoneCodeListOptions");
+const countryCodeElement = document.querySelector("#phoneCodeListOptions");
 
 // add event listener when change the language
 const changeLanguage = () => {
@@ -105,15 +87,16 @@ const handleSubmit = () => {
     // if name is empty ask for input
     if (applicantNameElement.value.length === 0) {
       submitAlertCheck(changeLanguageElement.value);
-      return
+      return;
     }
+
+    let canadianAddress = `${canadianAddressElement.value.trim()}, ${cityElement.value.trim()}, ${provinceElement.value.trim()}, ${postcodeElement.value.trim()}`;
+    canadianAddress;
 
     let collectInfo = {
       applicantName: applicantNameElement.value.trim(),
       maritalStatus: maritalStatusElement.value,
-      canadianAddress: `${canadianAddressElement.value.trim()}, ${
-        cityElement.value
-      }, ${provinceElement.value}, ${postcodeElement.value}`,
+      canadianAddress,
       dateOfBirth: dateOfBirthElement.value,
       emailAddress: emailAddressElement.value.trim(),
       canadianPhoneNumber: `${phoneNumberElement.value.trim()}`,
