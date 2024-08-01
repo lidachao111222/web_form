@@ -26,7 +26,10 @@
         </div>
         <!-- multi language  -->
         <div class="col-lg-2 col-4">
-          <select id="changeLanguage" class="form-select">
+          <label for="changeLanguage" class="visually-hidden"
+            >Select Language:</label
+          >
+          <select id="changeLanguage" class="form-select" aria-labelledby="language select">
             <option value="en" selected>English</option>
             <option value="fr">Français</option>
             <option value="he">עִבְרִית</option>
@@ -45,21 +48,33 @@
       <form>
         <!-- Applicant Name  -->
         <div class="mb-3">
-          <label for="name" class="form-label"
-            ><h3 id="applicantNameTitle"></h3
-          ></label>
-          <input type="text" class="form-control form-select-lg" id="name" />
+          <label
+            for="name"
+            class="form-label fs-3 fw-bold"
+            id="applicantNameTitle"
+            >Applicant Name:</label
+          >
+          <input
+            type="text"
+            class="form-control form-select-lg"
+            id="name"
+            aria-labelledby="applicant name input"
+          />
         </div>
         <!-- Marital Status  -->
         <!-- Types of marital status from ircc -->
         <div class="mb-3">
-          <label for="maritalStatus" class="form-label"
-            ><h3 id="maritalStatusTitle"></h3
-          ></label>
+          <label
+            for="maritalStatus"
+            class="form-label fs-3 fw-bold"
+            id="maritalStatusTitle"
+          >
+            Marital Status:
+          </label>
           <select
             id="maritalStatus"
             class="form-select form-select-lg"
-            aria-label="Default select example"
+            aria-label="marital status select"
           >
             <option
               value=""
@@ -73,14 +88,17 @@
 
         <!-- Canadian Address -->
         <div class="mb-3">
-          <label for="canadianAddress" class="form-label"
-            ><h3 id="addressTitle"></h3
+          <label
+            for="canadianAddress"
+            class="form-label fs-3 fw-bold"
+            id="addressTitle"
           ></label>
           <input
             type="text"
             class="form-control mb-3 form-select-lg"
             id="canadianAddress"
             placeholder="2024 Canada Way"
+            aria-label="address input"
           />
           <!-- city -->
           <div class="form-floating mb-3">
@@ -89,9 +107,10 @@
               list="cityListOptions"
               id="city"
               placeholder="city"
+              aria-label="city input"
             />
             <datalist id="cityListOptions"></datalist>
-            <label for="floatingInput" id="cityLabel"></label>
+            <label for="city" id="cityLabel"></label>
           </div>
 
           <!-- provinces  -->
@@ -99,7 +118,7 @@
             <select
               class="form-select"
               id="province"
-              aria-label="Floating label select province"
+              aria-label="select province"
             >
               <option
                 disabled
@@ -120,37 +139,48 @@
               id="postcode"
               placeholder="Post Code"
               oninput="this.value = this.value.toUpperCase();"
+              aria-label="postcode input"
             />
             <label for="postcode" id="postcodeLabel"></label>
           </div>
         </div>
         <!-- Date of Birth -->
         <div class="mb-3">
-          <label for="dateOfBirth" class="form-label"
-            ><h3 id="dateOfBirthTitle"></h3>
+          <label
+            for="dateOfBirth"
+            class="form-label fs-3 fw-bold"
+            id="dateOfBirthTitle"
+          >
           </label>
           <input
             type="date"
             class="form-control form-select-lg"
             id="dateOfBirth"
+            aria-label="date of birth input"
           />
         </div>
         <!-- Email -->
         <div class="mb-3">
-          <label for="email" class="form-label"
-            ><h3 id="emailTitle"></h3
+          <label
+            for="email"
+            class="form-label fs-3 fw-bold"
+            id="emailTitle"
           ></label>
           <input
             type="email"
             class="form-control form-select-lg"
             id="email"
             placeholder="xxxx@outlook.com"
+            aria-label="email number"
           />
         </div>
         <!-- Canadian Phone Number -->
         <div>
-          <label for="canadianPhoneNumber" class="form-label">
-            <h3 id="phoneNumberTitle"></h3>
+          <label
+            for="canadianPhoneNumber"
+            class="form-label fs-3 fw-bold"
+            id="phoneNumberTitle"
+          >
           </label>
         </div>
         <div
@@ -165,6 +195,7 @@
                 id="phoneCode"
                 placeholder="phoneCode"
                 value="🇨🇦 +1"
+                aria-label="country code input"
               />
               <datalist id="phoneCodeListOptions"> </datalist>
               <label for="floatingInput" id="countryCodelabel"></label>
@@ -176,6 +207,7 @@
               class="form-control form-control-lg"
               id="canadianPhoneNumber"
               placeholder="604xxxxxx"
+              aria-label="phone number input"
             />
           </div>
         </div>
@@ -187,6 +219,7 @@
             type="checkbox"
             value=""
             id="indigenousCheckBox"
+            aria-label="indigenous checkBox"
           />
           <label
             class="form-check-label fs-4"
@@ -200,6 +233,7 @@
             type="text"
             class="form-control mt-3 d-none form-control-lg"
             id="nationalityInputELement"
+            aria-label="nationality Input"
           />
         </div>
 
@@ -209,6 +243,7 @@
             class="btn btn-primary btn-lg"
             type="button"
             id="subButton"
+            aria-label="submit button"
           ></button>
         </div>
       </form>
