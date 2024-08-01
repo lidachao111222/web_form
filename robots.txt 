@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://chao-web-form.netlify.app/sitemap.xml
