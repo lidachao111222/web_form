@@ -2,8 +2,8 @@
   --border-color: #ced4da;
 }
 
-.phoneNumberContainer{
-    border: 1px solid var(--border-color);
+.phoneNumberContainer {
+  border: 1px solid var(--border-color);
 }
 
 #canadianPhoneNumber,
@@ -20,7 +20,12 @@
   box-shadow: none;
 }
 
-#indigenousCheckBox{
-  padding: .6rem;
+#indigenousCheckBox {
+  padding: 0.6rem;
   margin-right: 1rem;
+}
+
+#formState {
+  word-wrap: break-word;
+  word-break: break-all;
 }
