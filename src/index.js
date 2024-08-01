@@ -1,9 +1,14 @@
+import loadLanguage from "../utils/language.js";
+
 import {
   addValidationListeners,
   validateDateOfBirth,
 } from "../utils/validation.js";
 
 import updateDropdown from "../utils/updateDropdown.js";
+
+// select element of changing language
+let changeLanguageElement = document.querySelector("#changeLanguage");
 
 // Applicant Name
 let applicantNameElement = document.querySelector("#name");
@@ -54,6 +59,13 @@ let cityListOptionsElement = document.querySelector("#cityListOptions");
 
 // get phoneCodeList element
 let countryCodeElement = document.querySelector("#phoneCodeListOptions");
+
+// add event listener when change the language
+const changeLanguage = () => {
+  changeLanguageElement.addEventListener("change", function () {
+    loadLanguage(changeLanguageElement.value);
+  });
+};
 
 // request city list from json file
 const getCityList = () => {
@@ -115,6 +127,9 @@ const handleSubmit = () => {
 };
 
 function main() {
+  // init language
+  loadLanguage("en");
+  changeLanguage();
   getCityList();
   getCountryCodeList();
   initValidators();
