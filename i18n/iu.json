@@ -40,5 +40,7 @@
   "countryCode": "ᓄᓇᕗᒻᒥ ᖃᓄᐃᓐᓇᖅ",
   "identifyAsIndigenous": "ᐊᓯᔾᔨᖃᑎᒌᖅᓯᒪᔪᖅ ᓄᓇᕗᒻᒥᒃ",
   "nationality": "ᓄᓇᕗᒻᒥᒃ",
-  "submit": "ᐊᔾᔨᖅᑎᑦᓯᕗᖅ"
+  "submit": "ᐊᔾᔨᖅᑎᑦᓯᕗᖅ",
+  "warningOfSubmit": "ᐃᓄᒃᑎᑐᑦ ᐊᑎᖅ ᐱᓕᕆᕝᕕᖓᓄᑦ, ᐃᓚᓕᒫᖅᑐᖅ ᐊᑎᒍᓗᖓᖓᓄᑦ",
+  "warningOfBirth": "ᐅᓪᓗᖅ ᐊᒻᒪᒍᑎ ᐅᓪᓗᕈᖅᑐᖅ ᐃᓚᓐᓂᐊᕐᓂᖅ."
 }

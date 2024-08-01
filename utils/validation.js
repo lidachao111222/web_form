@@ -1,3 +1,5 @@
+import { dateOfBirthAlertCheck } from "../utils/language.js";
+
 const addValidationListeners = (element, regex) => {
   // function that handle blur events
   const handleBlur = () => {
@@ -34,7 +36,7 @@ const validateDateOfBirth = (element) => {
     currentDate.setHours(0, 0, 0, 0);
     // compare
     if (currentDate.valueOf() < selectedDate.valueOf()) {
-      alert("Date cannot be later than today.");
+      dateOfBirthAlertCheck(document.querySelector("#changeLanguage").value);
       this.value = "";
     }
   });

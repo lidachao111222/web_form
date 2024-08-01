@@ -31,6 +31,18 @@ async function loadLanguage(lang) {
     renderProvinceSelecter(texts)
 }
 
+async function submitAlertCheck(lang){
+    const response = await fetch(`../i18n/${lang}.json`);
+    const texts = await response.json();
+    alert(texts?.warningOfSubmit);
+}
+
+async function dateOfBirthAlertCheck(lang){
+    const response = await fetch(`../i18n/${lang}.json`);
+    const texts = await response.json();
+    alert(texts?.warningOfBirth);
+}
+
 const renderMaritalSelecter = ({status}) => {
     const selectParent = document.querySelector("#maritalStatus");
     const lastOption = document.querySelector("#lastOptionOfMarital"); 
@@ -56,4 +68,6 @@ const renderProvinceSelecter = ({provinceList}) => {
     }
 }
 
-export default loadLanguage;
+
+
+export  { loadLanguage, submitAlertCheck, dateOfBirthAlertCheck }

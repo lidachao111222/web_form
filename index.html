@@ -16,11 +16,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row align-items-center mt-5 mb-5">
         <div class="col">
-          <h1 class="mt-5" id="formTitle"></h1>
+          <h1 id="formTitle"></h1>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2 col-4">
           <select id="changeLanguage" class="form-select">
             <option value="en" selected>English</option>
             <option value="fr">Français</option>
@@ -35,7 +35,7 @@
 
       <form>
         <!-- Applicant Name  -->
-        <div class="mb-3 mt-3">
+        <div class="mb-3">
           <label for="name" class="form-label"
             ><h3 id="applicantNameTitle"></h3
           ></label>
@@ -172,7 +172,7 @@
         </div>
 
         <!-- "I identify as indigenous" (checkbox) -->
-        <div class="form-check mt-5">
+        <div class="form-check mt-5 d-flex align-items-center">
           <input
             class="form-check-input"
             type="checkbox"
@@ -180,7 +180,7 @@
             id="indigenousCheckBox"
           />
           <label
-            class="form-check-label"
+            class="form-check-label fs-4"
             for="indigenousCheckBox"
             id="indigenousLabel"
           >
@@ -189,14 +189,14 @@
         <div>
           <input
             type="text"
-            class="form-control mt-2 d-none form-control-lg"
+            class="form-control mt-3 d-none form-control-lg"
             id="nationalityInputELement"
           />
         </div>
 
         <!-- submit button  -->
         <div class="d-grid gap-2 mt-5 mb-5">
-          <button class="btn btn-primary" type="button" id="subButton"></button>
+          <button class="btn btn-primary btn-lg" type="button" id="subButton"></button>
         </div>
       </form>
     </div>

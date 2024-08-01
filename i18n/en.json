@@ -40,5 +40,7 @@
   "countryCode": "Country Code",
   "identifyAsIndigenous": "I identify as indigenous",
   "nationality": "Nationality",
-  "submit": "Submit"
+  "submit": "Submit",
+  "warningOfSubmit": "The Applicant Name is required, please enter your name.",
+  "warningOfBirth": "Date cannot be later than today."
 }

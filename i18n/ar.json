@@ -40,5 +40,7 @@
   "countryCode": "رمز البلد",
   "identifyAsIndigenous": "أعتبر نفسي من السكان الأصليين",
   "nationality": "الجنسية",
-  "submit": "إرسال"
+  "submit": "إرسال",
+  "warningOfSubmit": "مطلوب اسم مقدم الطلب، يرجى إدخال اسمك",
+  "warningOfBirth": "التاريخ لا يمكن أن يكون بعد اليوم."
 }

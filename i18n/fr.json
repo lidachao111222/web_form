@@ -40,5 +40,7 @@
   "countryCode": "Indicatif du pays",
   "identifyAsIndigenous": "Je m'identifie comme indigène",
   "nationality": "Nationalité",
-  "submit": "Soumettre"
+  "submit": "Soumettre",
+  "warningOfSubmit": "Le nom du demandeur est obligatoire, veuillez saisir votre nom.",
+  "warningOfBirth": "La date ne peut pas être postérieure à aujourd'hui."
 }

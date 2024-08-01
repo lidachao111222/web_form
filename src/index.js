@@ -1,4 +1,4 @@
-import loadLanguage from "../utils/language.js";
+import { loadLanguage, submitAlertCheck } from "../utils/language.js";
 
 import {
   addValidationListeners,
@@ -104,8 +104,8 @@ const handleSubmit = () => {
   submitButtonElement.addEventListener("click", function () {
     // if name is empty ask for input
     if (applicantNameElement.value.length === 0) {
-      alert("the Applicant Name is required, please enter your name");
-      return;
+      submitAlertCheck(changeLanguageElement.value);
+      return
     }
 
     let collectInfo = {

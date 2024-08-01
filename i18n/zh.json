@@ -40,5 +40,7 @@
   "countryCode": "国家代码",
   "identifyAsIndigenous": "我认同为原住民",
   "nationality": "民族",
-  "submit": "提交"
+  "submit": "提交",
+  "warningOfSubmit": "申请人姓名为必填项，请输入您的姓名。",
+  "warningOfBirth": "日期不能晚于今天。"
 }

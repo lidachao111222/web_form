@@ -40,5 +40,7 @@
   "countryCode": "Código de País",
   "identifyAsIndigenous": "Me identifico como indígena",
   "nationality": "Nacionalidad",
-  "submit": "Enviar"
+  "submit": "Enviar",
+  "warningOfSubmit": "el Nombre del solicitante es obligatorio, introduzca su nombre",
+  "warningOfBirth": "La fecha no puede ser posterior a hoy."
 }
