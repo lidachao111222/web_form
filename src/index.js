@@ -4,7 +4,7 @@ import {
   validateDateOfBirth,
 } from "../utils/validation.js";
 import updateDropdown from "../utils/updateDropdown.js";
-import esterEgg from "../utils/easter-egg.js"
+import esterEgg from "../utils/easter-egg.js";
 
 // select element of changing language
 const changeLanguageElement = document.querySelector("#changeLanguage");
@@ -92,7 +92,6 @@ const handleSubmit = () => {
     }
 
     let canadianAddress = `${canadianAddressElement.value.trim()}, ${cityElement.value.trim()}, ${provinceElement.value.trim()}, ${postcodeElement.value.trim()}`;
-    canadianAddress;
 
     let collectInfo = {
       applicantName: applicantNameElement.value.trim(),
