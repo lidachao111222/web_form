@@ -4,7 +4,7 @@ import {
   validateDateOfBirth,
 } from "../utils/validation.js";
 import updateDropdown from "../utils/updateDropdown.js";
-import esterEgg from "../utils/easter-egg.js";
+import easterEgg from "../utils/easter-egg.js";
 
 // select element of changing language
 const changeLanguageElement = document.querySelector("#changeLanguage");
@@ -118,7 +118,7 @@ function main() {
   initValidators();
   handleIndigenousCheckBox();
   handleSubmit();
-  esterEgg();
+  easterEgg();
 }
 
 main();
