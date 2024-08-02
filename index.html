@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./src/index.css" />
     <script src="./src/index.js" type="module" defer></script>
   </head>
-  <body>
+  <body class="d-flex flex-column">
     <header class="container">
       <div class="row align-items-center mt-5 mb-5">
         <div class="col">
@@ -51,7 +51,7 @@
       </div>
     </header>
     <!-- web form -->
-    <div class="container">
+    <div class="container flex-grow-1">
       <form>
         <!-- Applicant Name  -->
         <div class="mb-3">
@@ -254,11 +254,12 @@
           ></button>
         </div>
       </form>
-    </div>
-    <!-- Display at the bottom of the form page a JSON object representing the state of the
+
+      <!-- Display at the bottom of the form page a JSON object representing the state of the
 form inputs. -->
-    <div class="container mb-5">
-      <div><p id="formState"></p></div>
+      <div class="mb-5">
+        <div><p id="formState"></p></div>
+      </div>
     </div>
     <footer>
       <p class="text-center">
