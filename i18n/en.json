@@ -34,7 +34,7 @@
   ],
   "provinceInputPlaceholder": "Select province from the menu",
   "postCode": "Post Code (eg: 'V3N 2N8')",
-  "dateOfBirth": "Date of Birth:",
+  "dateOfBirth": "Date of Birth",
   "email": "Email:",
   "canadianPhoneNumber": "Canadian Phone Number:",
   "countryCode": "Country Code",
@@ -42,5 +42,7 @@
   "nationality": "Nationality",
   "submit": "Submit",
   "warningOfSubmit": "The Applicant Name is required, please enter your name.",
-  "warningOfBirth": "Date cannot be later than today."
+  "warningOfBirth": "Date cannot be later than today.",
+  "mobileOfDateInfo": "After clicking the input field, select the year from the top left corner.",
+  "pcOfDateInfo": "Please click the icon on the right side of the input field to select the year."
 }

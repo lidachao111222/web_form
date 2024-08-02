@@ -34,7 +34,7 @@
   ],
   "provinceInputPlaceholder": "Seleccione una provincia del menú",
   "postCode": "Código Postal (ej: 'V3N 2N8')",
-  "dateOfBirth": "Fecha de Nacimiento:",
+  "dateOfBirth": "Fecha de Nacimiento",
   "email": "Correo Electrónico:",
   "canadianPhoneNumber": "Número de Teléfono Canadiense:",
   "countryCode": "Código de País",
@@ -42,5 +42,7 @@
   "nationality": "Nacionalidad",
   "submit": "Enviar",
   "warningOfSubmit": "el Nombre del solicitante es obligatorio, introduzca su nombre",
-  "warningOfBirth": "La fecha no puede ser posterior a hoy."
+  "warningOfBirth": "La fecha no puede ser posterior a hoy.",
+  "mobileOfDateInfo": "Después de hacer clic en el campo de entrada, selecciona el año desde la esquina superior izquierda.",
+  "pcOfDateInfo": "Por favor, haz clic en el icono en el lado derecho del campo de entrada para seleccionar el año."
 }

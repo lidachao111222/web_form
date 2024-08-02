@@ -1,8 +1,8 @@
 {
   "formTitle": "表单字段",
-  "applicantName": "申请人姓名（必填）：",
+  "applicantName": "申请人姓名（必填）:",
   "namePlaceholder": "名字 姓氏",
-  "maritalStatus": "婚姻状况：",
+  "maritalStatus": "婚姻状况:",
   "maritalStatusInputPlaceholder": "请选择您的婚姻状态",
   "status": [
     "单身",
@@ -14,7 +14,7 @@
     "未声明",
     "自然发展"
   ],
-  "canadianAddress": "加拿大地址：",
+  "canadianAddress": "加拿大地址:",
   "city": "城市",
   "provinces": "省份",
   "provinceList": [
@@ -34,13 +34,15 @@
   ],
   "provinceInputPlaceholder": "从菜单中选择省份",
   "postCode": "邮政编码（例如：'V3N 2N8'）",
-  "dateOfBirth": "出生日期：",
-  "email": "电子邮件：",
+  "dateOfBirth": "出生日期",
+  "email": "电子邮件:",
   "canadianPhoneNumber": "加拿大电话号码:",
   "countryCode": "国家代码",
   "identifyAsIndigenous": "我认同为原住民",
   "nationality": "民族",
   "submit": "提交",
   "warningOfSubmit": "申请人姓名为必填项，请输入您的姓名。",
-  "warningOfBirth": "日期不能晚于今天。"
+  "warningOfBirth": "日期不能晚于今天。",
+  "mobileOfDateInfo": "点击输入框后，从左上角选择年份。",
+  "pcOfDateInfo": "请点击输入框右侧的图标选择年份。"
 }

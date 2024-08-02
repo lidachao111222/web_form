@@ -34,7 +34,7 @@
   ],
   "provinceInputPlaceholder": "בחר מחוז מהתפריט",
   "postCode": "קוד פוסטלי (לדוגמא: 'V3N 2N8')",
-  "dateOfBirth": "תאריך לידה:",
+  "dateOfBirth": "תאריך לידה",
   "email": "דוא\"ל:",
   "canadianPhoneNumber": "מספר טלפון קנדי:",
   "countryCode": "קוד מדינה",
@@ -42,5 +42,7 @@
   "nationality": "לאום",
   "submit": "שלח",
   "warningOfSubmit": "שם המועמד נדרש, אנא הזן את שמך.",
-  "warningOfBirth": "התאריך לא יכול להיות מאוחר יותר מהיום."
+  "warningOfBirth": "התאריך לא יכול להיות מאוחר יותר מהיום.",
+  "mobileOfDateInfo": "לאחר לחיצה על שדה הקלט, בחר את השנה מהפינה השמאלית העליונה.",
+  "pcOfDateInfo": "אנא לחץ על האייקון בצד ימין של שדה הקלט כדי לבחור את השנה."
 }

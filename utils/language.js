@@ -13,7 +13,8 @@ async function loadLanguage(lang) {
     document.querySelector("#firstOptionOfProvince").textContent = texts?.provinceInputPlaceholder;
     document.querySelector("#postcodeLabel").textContent = texts?.postCode;
     document.querySelector("#dateOfBirthTitle").textContent = texts?.dateOfBirth;
-    document.querySelector("#dateOfBirthTitle").textContent = texts?.dateOfBirth;
+    document.querySelector("#mobileOfDateInfo").setAttribute("data-bs-original-title", texts?.mobileOfDateInfo);
+    document.querySelector("#pcOfDateInfo").setAttribute("data-bs-original-title", texts?.pcOfDateInfo);
     document.querySelector("#emailTitle").textContent = texts?.email;
     document.querySelector("#phoneNumberTitle").textContent = texts?.canadianPhoneNumber;
     document.querySelector("#countryCodelabel").textContent = texts?.countryCode;
