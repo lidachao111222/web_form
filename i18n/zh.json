@@ -5,14 +5,14 @@
   "maritalStatus": "婚姻状况:",
   "maritalStatusInputPlaceholder": "请选择您的婚姻状态",
   "status": [
-    "单身",
-    "同居",
-    "已婚",
-    "离婚",
-    "分居",
-    "丧偶",
-    "未声明",
-    "自然发展"
+    { "name": "单身", "value": "single" },
+    { "name": "同居", "value": "common law" },
+    { "name": "已婚", "value": "married" },
+    { "name": "离婚", "value": "divorced" },
+    { "name": "分居", "value": "separated" },
+    { "name": "鳏夫/寡妇", "value": "widowed" },
+    { "name": "未说明", "value": "unstated" },
+    { "name": "自然进展", "value": "natural progression" }
   ],
   "canadianAddress": "加拿大地址:",
   "city": "城市",

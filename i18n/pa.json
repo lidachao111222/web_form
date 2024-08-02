@@ -5,14 +5,14 @@
   "maritalStatus": "ਵੈਵਾਹਿਕ ਹਾਲਤ:",
   "maritalStatusInputPlaceholder": "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਹਾਲਤ ਚੁਣੋ",
   "status": [
-    "ਸਿੰਗਲ",
-    "ਕਾਮਨ ਲਾ",
-    "ਵਿਆਹੀ",
-    "ਤਲਾਕਸ਼ੁਦਾ",
-    "ਵਖਰਾ",
-    "ਵਿਧਵਾ",
-    "ਅਣਦਾਜ਼ਾ",
-    "ਕੁਦਰਤੀ ਤਰੱਕੀ"
+    { "name": "ਕੁਵਾਰਾ/ਕੁਵਾਰੀ", "value": "single" },
+    { "name": "ਕੌਮਨ ਲਾਅ", "value": "common law" },
+    { "name": "ਵਿਆਹਿਆ ਹੋਇਆ/ਵਿਆਹੀ ਹੋਈ", "value": "married" },
+    { "name": "ਤਲਾਕਸ਼ੁਦਾ", "value": "divorced" },
+    { "name": "ਅਲੱਗ ਹੋਇਆ/ਹੋਈ", "value": "separated" },
+    { "name": "ਵਿਧਵਾ/ਵਿਧੂਰ", "value": "widowed" },
+    { "name": "ਅਣਪਛਾਤਾ", "value": "unstated" },
+    { "name": "ਕੁਦਰਤੀ ਤਰੱਕੀ", "value": "natural progression" }
   ],
   "canadianAddress": "ਕੈਨੇਡੀਅਨ ਪਤਾ:",
   "city": "ਸ਼ਹਿਰ",

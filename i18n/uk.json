@@ -5,14 +5,14 @@
   "maritalStatus": "Сімейний стан:",
   "maritalStatusInputPlaceholder": "Будь ласка, виберіть ваш статус",
   "status": [
-    "Неодружений",
-    "Цивільний шлюб",
-    "Одружений",
-    "Розведений",
-    "Розділений",
-    "Вдівець",
-    "Не вказано",
-    "Природний розвиток"
+    { "name": "Неодружений/Незаміжня", "value": "single" },
+    { "name": "Цивільний шлюб", "value": "common law" },
+    { "name": "Одружений/Заміжня", "value": "married" },
+    { "name": "Розлучений/Розлучена", "value": "divorced" },
+    { "name": "Окремо проживає", "value": "separated" },
+    { "name": "Вдівець/Вдова", "value": "widowed" },
+    { "name": "Не вказано", "value": "unstated" },
+    { "name": "Природний розвиток", "value": "natural progression" }
   ],
   "canadianAddress": "Адреса в Канаді:",
   "city": "Місто",

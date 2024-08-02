@@ -5,14 +5,14 @@
   "maritalStatus": "Marital Status:",
   "maritalStatusInputPlaceholder": "Please select your status",
   "status": [
-    "Single",
-    "Common Law",
-    "Married",
-    "Divorced",
-    "Separated",
-    "Widowed",
-    "Unstated",
-    "Natural Progression"
+    { "name": "Single", "value": "single" },
+    { "name": "Common Law", "value": "common law" },
+    { "name": "Married", "value": "married" },
+    { "name": "Divorced", "value": "divorced" },
+    { "name": "Separated", "value": "separated" },
+    { "name": "Widowed", "value": "widowed" },
+    { "name": "Unstated", "value": "unstated" },
+    { "name": "Natural Progression", "value": "natural progression" }
   ],
   "canadianAddress": "Canadian Address:",
   "city": "City",

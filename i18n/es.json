@@ -5,14 +5,14 @@
   "maritalStatus": "Estado Civil:",
   "maritalStatusInputPlaceholder": "Por favor, seleccione su estado civil",
   "status": [
-    "Soltero",
-    "Unión Libre",
-    "Casado",
-    "Divorciado",
-    "Separado",
-    "Viudo",
-    "No Declarado",
-    "Progresión Natural"
+    { "name": "Soltero/a", "value": "single" },
+    { "name": "Unión libre", "value": "common law" },
+    { "name": "Casado/a", "value": "married" },
+    { "name": "Divorciado/a", "value": "divorced" },
+    { "name": "Separado/a", "value": "separated" },
+    { "name": "Viudo/a", "value": "widowed" },
+    { "name": "No declarado/a", "value": "unstated" },
+    { "name": "Progresión natural", "value": "natural progression" }
   ],
   "canadianAddress": "Dirección Canadiense:",
   "city": "Ciudad",

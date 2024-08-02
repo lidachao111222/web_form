@@ -5,14 +5,14 @@
   "maritalStatus": "ᐊᒻᒪᖔᖅᑐᖅ ᐊᓪᓚᕈᖅᑐᖅ:",
   "maritalStatusInputPlaceholder": "ᐊᒻᒪᖔᖅᑐᖅ ᓇᖕᒥᒃ ᖁᑕᖅᓱᒋᑦᓴᖅ",
   "status": [
-    "ᐊᕕᒃᓴᖅ",
-    "ᑐᖅᑰᖅᑐᖅ ᐃᓄᒃᑳᖅ",
-    "ᐊᖏᖅᑐᐊᖅ",
-    "ᐊᕕᒃᑲᑦᓴᖅ",
-    "ᐊᒻᒪᖔᖅᑖᖅ",
-    "ᐊᖑᑐᐃᓐᓇᖅ",
-    "ᐊᒻᒪᖔᖅᓱᒃᑯᖏᑦ",
-    "ᓄᓇᕗᒻᒥᒃ ᑕᒻᒪᕆᖅᑐᖅ"
+    { "name": "ᐊᐅᓪᓚᕆᓂ", "value": "single" },
+    { "name": "ᐱᐅᔪᐃᑦ ᐊᓯᖃᑎᒌᓐᓂ", "value": "common law" },
+    { "name": "ᐊᐅᓪᓚᕆᓂ ᐊᒻᒪ ᐊᑐᕚᐃᑦ", "value": "married" },
+    { "name": "ᑲᒃᑲᒋᐊᓕᖅᑯᑦ", "value": "divorced" },
+    { "name": "ᓇᐃᓪᓚᕆᑦ", "value": "separated" },
+    { "name": "ᐃᓕᓕᐊᖃᑎᒌᓐᓂ", "value": "widowed" },
+    { "name": "ᐃᖃᓪᓗᒍᓐᓂ", "value": "unstated" },
+    { "name": "ᐊᑎᓕᐅᕈᑎᒋᐊᖅ", "value": "natural progression" }
   ],
   "canadianAddress": "ᑲᓇᑕᒥ ᓄᓇᕗᒻᒥ:",
   "city": "ᓄᓇᕗᒻᒥ",

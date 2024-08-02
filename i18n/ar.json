@@ -5,14 +5,14 @@
   "maritalStatus": "الحالة الاجتماعية:",
   "maritalStatusInputPlaceholder": "الرجاء اختيار حالتك الاجتماعية",
   "status": [
-    "أعزب",
-    "قانون مشترك",
-    "متزوج",
-    "مطلق",
-    "منفصل",
-    "أرمل",
-    "غير معلن",
-    "تقدم طبيعي"
+    { "name": "أعزب", "value": "single" },
+    { "name": "علاقة غير رسمية", "value": "common law" },
+    { "name": "متزوج", "value": "married" },
+    { "name": "مطلق", "value": "divorced" },
+    { "name": "منفصل", "value": "separated" },
+    { "name": "أرمل", "value": "widowed" },
+    { "name": "غير مذكور", "value": "unstated" },
+    { "name": "تقدم طبيعي", "value": "natural progression" }
   ],
   "canadianAddress": "العنوان الكندي:",
   "city": "المدينة",

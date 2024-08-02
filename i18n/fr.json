@@ -5,14 +5,14 @@
   "maritalStatus": "État civil :",
   "maritalStatusInputPlaceholder": "Veuillez sélectionner votre statut",
   "status": [
-    "Célibataire",
-    "Conjoint de fait",
-    "Marié(e)",
-    "Divorcé(e)",
-    "Séparé(e)",
-    "Veuf(ve)",
-    "Non déclaré",
-    "Progression naturelle"
+    { "name": "Célibataire", "value": "single" },
+    { "name": "Union libre", "value": "common law" },
+    { "name": "Marié(e)", "value": "married" },
+    { "name": "Divorcé(e)", "value": "divorced" },
+    { "name": "Séparé(e)", "value": "separated" },
+    { "name": "Veuf/Veuve", "value": "widowed" },
+    { "name": "Non déclaré(e)", "value": "unstated" },
+    { "name": "Progression naturelle", "value": "natural progression" }
   ],
   "canadianAddress": "Adresse canadienne :",
   "city": "Ville",

@@ -5,14 +5,14 @@
   "maritalStatus": "מצב משפחתי:",
   "maritalStatusInputPlaceholder": "אנא בחר את מצבך המשפחתי",
   "status": [
-    "רווק/ה",
-    "בזוגיות משותפת",
-    "נשוי/אה",
-    "גרוש/ה",
-    "פרוד/ה",
-    "אלמן/ה",
-    "לא מוגדר",
-    "התקדמות טבעית"
+    { "name": "רווק/ה", "value": "single" },
+    { "name": "ידועים בציבור", "value": "common law" },
+    { "name": "נשוי/אה", "value": "married" },
+    { "name": "גרוש/ה", "value": "divorced" },
+    { "name": "פרוד/ה", "value": "separated" },
+    { "name": "אלמן/ה", "value": "widowed" },
+    { "name": "לא מצוין", "value": "unstated" },
+    { "name": "התפתחות טבעית", "value": "natural progression" }
   ],
   "canadianAddress": "כתובת בקנדה:",
   "city": "עיר",

@@ -47,14 +47,13 @@ async function dateOfBirthAlertCheck(lang){
 const renderMaritalSelecter = ({status}) => {
     const selectParent = document.querySelector("#maritalStatus");
     const lastOption = document.querySelector("#lastOptionOfMarital"); 
-  
-    status.forEach((statu) => {
+    for(const i in status){
         const newOption = document.createElement("option");
-        newOption.textContent = statu;
-        newOption.value = statu;
+        newOption.textContent = status[i]?.name;
+        newOption.value = status[i]?.value;
         newOption.classList.add("editOption");
         selectParent.insertBefore(newOption, lastOption);
-    });
+    }
 }
 
 const renderProvinceSelecter = ({provinceList}) => {
